@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+@font-face {
+	font-family: Nunito-Sans;
+	font-weight: 400;
+	src: url('/src/assets/fonts/NunitoSans-Regular.woff2') format('woff2'),
+		url('/src/assets/fonts/NunitoSans-Regular.woff') format('woff');
+}
+@font-face {
+	font-family: Nunito-Sans;
+	font-weight: 300;
+	src: url('/src/assets/fonts/NunitoSans-Light.woff2') format('woff2'),
+		url('/src/assets/fonts/NunitoSans-Light.woff') format('woff');
+}
+@font-face {
+	font-family: Nunito-Sans;
+	font-weight: 700;
+	src: url('/src/assets/fonts/NunitoSans-Bold.woff2') format('woff2'),
+		url('/src/assets/fonts/NunitoSans-Bold.woff') format('woff');
+}
+
+@theme {
+	--font-main: 'Nunito-Sans', 'sans-serif';
+	--color-white: #f9f9f9;
+	--color-main: #02d6e8;
+	--color-secondary: #136878;
+	--color-backgorund: #040714;
+	--color-footer: #0e0b14;
+}
