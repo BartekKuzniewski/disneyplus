@@ -30,4 +30,5 @@
 
 body {
 	font-family: var(--font-main);
+	color: var(--color-white);
 }
