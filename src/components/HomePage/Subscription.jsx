@@ -19,7 +19,7 @@ export function Subscription() {
 	];
 
 	return (
-		<section className='bg-black py-4 md:py-14 xl:py-20'>
+		<section className='bg-background py-4 md:py-14 xl:py-20'>
 			<Wrapper>
 				<div className='max-w-4xl mx-auto text-center mb-10'>
 					<h2 className='text-3xl font-bold mb-2 sm:text-4xl xl:mb-16 xl:text-[40px]'>Wybierz plan</h2>

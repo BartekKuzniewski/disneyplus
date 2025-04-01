@@ -7,11 +7,11 @@ export function ExclusiveContent() {
 				<picture>
 					<source
 						media='(max-width:768px )'
-						srcset='/images/szogunSmall.webp'
+						srcSet='/images/szogunSmall.webp'
 					/>
 					<source
 						media='(max-width:1600px )'
-						srcset='/images/szogunLarge.webp'
+						srcSet='/images/szogunLarge.webp'
 					/>
 					<img
 						src='/images/szogunLarge.webp'
