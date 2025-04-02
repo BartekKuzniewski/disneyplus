@@ -3,7 +3,7 @@ import { Wrapper } from '../Wrapper';
 
 export function Header() {
 	return (
-		<header className="relative h-[90dvh] xl:h-[100dvh]  bg-[url('/images/homePageBgSmall.webp')] bg-cover lg:bg-[url('/images/homePageBg1024.webp')] 2xl:bg-[url('/images/homePageBg1600.webp')]">
+		<header className="relative h-[90dvh] md:h-[100dvh]  bg-[url('/images/homePageBgSmall.webp')] bg-cover lg:bg-[url('/images/homePageBg1024.webp')] 2xl:bg-[url('/images/homePageBg1600.webp')]">
 			<div className='absolute inset-0 bg-black opacity-60 '></div>
 
 			<nav className='relative z-10 flex flex-row justify-between items-center px-4 py-4 md:px-6 2xl:px-10'>
@@ -22,18 +22,14 @@ export function Header() {
 				</Link>
 			</nav>
 			<Wrapper>
-				<div className='relative text-center z-10 max-w-2xl mx-auto mt-24 xl:mt-36'>
+				<div className='relative flex flex-col text-center z-10 mx-auto mt-24 md:mt-46 xl:mt-52 '>
 					<div className='md:flex md:justify-center md:items-center gap-6 '>
-						<p className='text-white text-7xl font-bold md:text-8xl'>7,99 zł</p>
-						<div>
-							<p className='text-white text-2xl font-light my-1 md:text-3xl md:font-normal'>
-								miesięcznie przez
-							</p>
-							<p className='text-main text-5xl font-bold'>4 miesiące</p>
-						</div>
+						<h2 className='text-3xl font-bold md:text-4xl xl:text-5xl'>
+							Nowe produkcje oryginalne, hity filmowe i seriale
+						</h2>
 					</div>
-					<p className='text-white text-2xl font-bold my-6 uppercase'>
-						promocja kończy się 30 maja
+					<p className='text-white text-xl font-bold my-6 '>
+						Możesz anulować w dowolnym momencie.*
 					</p>
 					<Link
 						to='/register'
@@ -41,18 +37,14 @@ export function Header() {
 					>
 						Zarejestruj się teraz
 					</Link>
-					<p className='text-grey my-4'>
-						Oferta dotyczy miesięcznego planu Standard.*
+					<p className='text-grey my-6'>
+						12 miesięcy w cenie 10 – kup roczną subskrypcję zamiast
+						comiesięcznej.
 					</p>
-					<a href='' className='text-white underline'>
-						Wyświetl wszystkie plany
-					</a>
-					<p className='text-grey text-xs leading-5 mt-4'>
-						*Oferta kończy się 30/03/25. Tylko nowi i spełniający warunki
-						powracający subskrybenci. Muszą mieć ukończone 18 lat. Poprzednia
-						miesięczna cena planu Standard: 29,99 zł. Po 4 miesiącach następuje
-						automatyczne odnowienie w obowiązującej wówczas miesięcznej cenie
-						planu Standard wynoszącej 29,99 zł, o ile nie anulujesz wcześniej.
+
+					<p className='text-grey text-xs leading-5 '>
+						*Anulowanie subskrypcji wchodzi w życie z końcem bieżącego roku
+						roliczeniowego. Wymagana subskrypcja.
 					</p>
 				</div>
 
