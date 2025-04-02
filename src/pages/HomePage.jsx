@@ -2,6 +2,7 @@ import { ExclusiveContent } from '../components/HomePage/ExclusiveContent';
 import { FAQ } from '../components/HomePage/FAQ';
 import { Header } from '../components/HomePage/Header';
 import { Subscription } from '../components/HomePage/Subscription';
+import { SupportedDevices } from '../components/HomePage/SupportedDevices';
 import { WatchAnywhere } from '../components/HomePage/WatchAnywhere';
 
 export function HomePage() {
@@ -13,6 +14,7 @@ export function HomePage() {
 				<Subscription />
 				<WatchAnywhere />
 				<FAQ />
+				<SupportedDevices />
 			</main>
 		</div>
 	);

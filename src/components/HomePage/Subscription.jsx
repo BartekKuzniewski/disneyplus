@@ -75,7 +75,7 @@ export function Subscription() {
 
 				<div className='hidden md:flex flex-col w-full max-w-4xl mx-auto' role='table'>
 					<div className='flex' role='columnheader'>
-						<div className='w-1/2 p-4' role='cell'></div>
+						<div className='w-1/2 p-4 ' role='cell'></div>
 						<div className='w-1/4 p-4 text-black text-center bg-gray-500/20 '>
 							<button className='bg-main px-4 py-3  rounded w-full max-w-3xs text-center tracking-widest cursor-pointer hover:bg-cyan-500 transition-colors duration-300'>
 								PREMIUM
