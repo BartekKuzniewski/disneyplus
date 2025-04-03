@@ -1,5 +1,6 @@
 import { ExclusiveContent } from '../components/HomePage/ExclusiveContent';
 import { FAQ } from '../components/HomePage/FAQ';
+import { Footer } from '../components/HomePage/Footer';
 import { Header } from '../components/HomePage/Header';
 import { Subscription } from '../components/HomePage/Subscription';
 import { SupportedDevices } from '../components/HomePage/SupportedDevices';
@@ -16,6 +17,7 @@ export function HomePage() {
 				<FAQ />
 				<SupportedDevices />
 			</main>
+			<Footer />
 		</div>
 	);
 }
