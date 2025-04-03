@@ -1,14 +1,11 @@
 export function FooterMenu({ title, links, onToggle, isOpen }) {
 	return (
-		<div className='mb-4 md:mb-0 md:w-40'>
-			{/* ZMIANA: Nagłówek jest teraz oddzielnym elementem, który nie jest częścią animowanego kontenera */}
+		<div className='mb-8 md:mb-0 md:w-40'>
 			<div
 				className='flex justify-between items-center cursor-pointer md:cursor-default'
 				onClick={onToggle}
 			>
-				<h3 className='text-sm uppercase font-semibold tracking-wide'>
-					{title}
-				</h3>
+				<h3 className='text-sm tracking-wide'>{title}</h3>
 				<span className='text-white md:hidden'>
 					{isOpen ? (
 						<svg
@@ -33,7 +30,6 @@ export function FooterMenu({ title, links, onToggle, isOpen }) {
 					)}
 				</span>
 			</div>
-			{/* ZMIANA: Animacja max-height jest stosowana tylko do listy, co zapobiega przesuwaniu nagłówka */}
 			<div
 				className={`overflow-hidden transition-all duration-300 ease-in-out md:transition-none ${
 					isOpen ? 'max-h-96' : 'max-h-0'
@@ -41,13 +37,11 @@ export function FooterMenu({ title, links, onToggle, isOpen }) {
 			>
 				<ul className='mt-3 space-y-3'>
 					{links.map((link, index) => (
-						<li key={index}>
-							<a
-								href='#'
-								className='text-gray-400 text-sm hover:text-white transition-colors'
-							>
-								{link}
-							</a>
+						<li
+							key={index}
+							className='text-grey text-xs hover:text-white transition-colors cursor-pointer'
+						>
+							{link}
 						</li>
 					))}
 				</ul>
