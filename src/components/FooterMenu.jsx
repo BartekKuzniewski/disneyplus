@@ -39,7 +39,7 @@ export function FooterMenu({ title, links, onToggle, isOpen }) {
 					{links.map((link, index) => (
 						<li
 							key={index}
-							className='text-grey text-xs hover:text-white transition-colors cursor-pointer'
+							className='text-grey text-xs my-4 last:mb-0 hover:text-white transition-colors cursor-pointer'
 						>
 							{link}
 						</li>
