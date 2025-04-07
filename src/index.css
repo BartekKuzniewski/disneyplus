@@ -27,9 +27,14 @@
 	--color-background: #040714;
 	--color-black: #0e0b14;
 	--color-footer: #0f0b14;
+	--color-login: radial-gradient(circle at 20% 95%, #056877, #051828 96%);
 }
 
 body {
 	font-family: var(--font-main);
 	color: var(--color-white);
+}
+
+button {
+	cursor: pointer;
 }
