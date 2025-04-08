@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 export function LoginPage() {
 	return (
 		<div className='bg-radial-[at_20%_95%] from-[#056877] to-[#051828] to-96% h-screen flex flex-col justify-center items-center text-black p-4'>
-			<Link to='/' className='flex items-center justify-center mb-10 '>
+			<Link to='/' className='flex items-center justify-center mb-6 '>
 				<img
 					src='/images/disneyLogo.png'
 					alt='Logo Disney+'
 					className='h-18 md:h-24'
 				/>
 			</Link>
-			<div className='bg-white rounded-2xl px-4 py-8 md:p-12 max-w-lg w-full h-[65dvh] shadow-lg text-center md:text-left '>
+			<div className='bg-white rounded-2xl px-4 py-8 md:p-12 max-w-lg w-full  shadow-lg text-center md:text-left '>
 				<div className='w-28 mx-auto md:mx-0'>
 					<svg
 						aria-hidden='true'
