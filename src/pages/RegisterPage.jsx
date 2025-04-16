@@ -1,6 +1,29 @@
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useState } from 'react';
+import { auth } from '../firebase';
 import { Link } from 'react-router-dom';
 
 export function RegisterPage() {
+	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+	async function handleRegister(e) {
+		e.preventDefault();
+		try {
+			await createUserWithEmailAndPassword(auth, email, password);
+			const user = auth.currentUser;
+			console.log(user);
+			console.log('sukces');
+		} catch (error) {
+			console.log(error.message);
+		}
+
+		setUsername('');
+		setPassword('');
+		setEmail('');
+	}
+
 	return (
 		<div className='bg-radial-[at_20%_95%] from-[#056877] to-[#051828] to-96% h-screen flex flex-col justify-center items-center text-black p-4'>
 			<Link to='/' className='flex items-center justify-center mb-6 '>
@@ -63,11 +86,26 @@ export function RegisterPage() {
 					Używając konta MyDisney, możesz logować się do Disney+ i innych usług
 					całej grupy The Walt Disney Family of Companies.
 				</p>
-				<form className='text-left space-y-6 max-w-sm mx-auto md:max-w-full'>
+				<form
+					className='text-left space-y-6 max-w-sm mx-auto md:max-w-full'
+					onSubmit={handleRegister}
+				>
+					<div>
+						<input
+							type='text'
+							placeholder='Nazwa użytkownika'
+							value={username}
+							onChange={(e) => setUsername(e.target.value)}
+							required
+							className='w-full px-4 py-3 rounded-md text-black bg-gray-200 border-b-2 border-gray-400 focus:outline-none  placeholder-gray-500 focus:bg-blue-100'
+						/>
+					</div>
 					<div>
 						<input
 							type='email'
 							placeholder='E-mail'
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
 							required
 							className='w-full px-4 py-3 rounded-md text-black bg-gray-200 border-b-2 border-gray-400 focus:outline-none  placeholder-gray-500 focus:bg-blue-100'
 						/>
@@ -76,6 +114,8 @@ export function RegisterPage() {
 						<input
 							type='password'
 							placeholder='Hasło'
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
 							required
 							className='w-full px-4 py-3 rounded-md text-black bg-gray-200 border-b-2 border-gray-400 focus:outline-none  placeholder-gray-500 focus:bg-blue-100'
 						/>
