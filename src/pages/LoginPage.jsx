@@ -1,6 +1,25 @@
-import { Link } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../firebase';
+import { useState } from 'react';
 
 export function LoginPage() {
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [error, setError] = useState('');
+	const navigate = useNavigate();
+
+	async function handleLogin(e) {
+		e.preventDefault();
+		try {
+			await signInWithEmailAndPassword(auth, email, password);
+			console.log('zalogowano pomyślnie');
+			navigate('/');
+		} catch (err) {
+			setError('Nieprawidłowy email lub hasło.');
+		}
+	}
+
 	return (
 		<div className='bg-radial-[at_20%_95%] from-[#056877] to-[#051828] to-96% h-screen flex flex-col justify-center items-center text-black p-4'>
 			<Link to='/' className='flex items-center justify-center mb-6 '>
@@ -63,11 +82,12 @@ export function LoginPage() {
 					Zaloguj się do Disney+ używając swojego konta MyDisney.
 				</p>
 
-				<form className='space-y-6 text-left'>
+				<form className='space-y-6 text-left' onSubmit={handleLogin}>
 					<div>
 						<input
 							type='email'
 							placeholder='E-mail'
+							onChange={(e) => setEmail(e.target.value)}
 							required
 							className='w-full px-4 py-3 rounded-md text-black bg-gray-200 border-b-2 border-gray-400 focus:outline-none  placeholder-gray-500 focus:bg-blue-100'
 						/>
@@ -76,6 +96,7 @@ export function LoginPage() {
 						<input
 							type='password'
 							placeholder='Hasło'
+							onChange={(e) => setPassword(e.target.value)}
 							required
 							className='w-full px-4 py-3 rounded-md text-black bg-gray-200 border-b-2 border-gray-400 focus:outline-none  placeholder-gray-500 focus:bg-blue-100'
 						/>

@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useState } from 'react';
 import { auth } from '../firebase';
 import { Link } from 'react-router-dom';
@@ -11,10 +11,19 @@ export function RegisterPage() {
 	async function handleRegister(e) {
 		e.preventDefault();
 		try {
-			await createUserWithEmailAndPassword(auth, email, password);
-			const user = auth.currentUser;
-			console.log(user);
-			console.log('sukces');
+			const userCredential = await createUserWithEmailAndPassword(
+				auth,
+				email,
+				password
+			);
+			const user = userCredential.user;
+
+			// Ustawiamy nazwę użytkownika w profilu
+			await updateProfile(user, {
+				displayName: username,
+			});
+
+			console.log('Użytkownik po rejestracji:', auth.currentUser);
 		} catch (error) {
 			console.log(error.message);
 		}
